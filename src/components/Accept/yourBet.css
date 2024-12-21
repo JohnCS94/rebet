@@ -1,0 +1,76 @@
+.you-bet-title {
+  display: block;
+  height: 30px;
+  font-size: 20px;
+  margin: 20px 4px;
+}
+
+.your-bet-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1px;
+  border-radius: 26px;
+  background: linear-gradient(
+    to right,
+    rgba(43, 42, 51, 1),
+    rgba(80, 80, 87, 1),
+    rgba(43, 42, 51, 1)
+  );
+  overflow: hidden;
+}
+
+.your-bet-inner {
+  background: black;
+  border-radius: 26px;
+  padding: 2px;
+}
+
+.you-bet-logo {
+  width: 85px;
+  height: 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.your-bet-info {
+  display: flex;
+  height: 100px;
+}
+
+.you-bet-image-container {
+  width: 35px;
+  height: 35px;
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.you-bet-summary {
+  display: flex;
+  align-items: center;
+  background: #191922;
+  padding: 14px;
+  font-weight: 600;
+  padding-left: 30px;
+}
+
+.you-bet-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.you-bet-text-title {
+  font-size: 18px;
+  color: #fd6a32;
+}
+
+.you-bet-text-content {
+  font-size: 20px;
+  font-weight: 600;
+}

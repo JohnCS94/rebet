@@ -1,0 +1,23 @@
+.odds-container {
+  position: relative;
+  padding: 1px;
+  border-radius: 12px;
+  background: linear-gradient(to right, #332e32, #595357, #332e32);
+  overflow: hidden;
+  width: 100%;
+}
+
+.odds-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #32313c;
+  border-radius: 12px;
+  padding: 4px 4px;
+  font-size: 0.8rem;
+}
+
+.odd {
+  color: #fd6a32;
+}

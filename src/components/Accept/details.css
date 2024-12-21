@@ -1,0 +1,38 @@
+.details-container {
+  display: flex;
+  margin-top: 50px;
+}
+
+.details-side {
+  width: 50%;
+}
+
+.details-amount-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1px;
+  border-radius: 6px;
+  background: linear-gradient(
+    to right,
+    rgba(43, 42, 51, 1),
+    rgba(80, 80, 87, 1),
+    rgba(43, 42, 51, 1)
+  );
+  overflow: hidden;
+  margin: 4px 12px;
+}
+
+.details-amount-inner {
+  display: flex;
+  justify-content: space-between;
+  background: #191922;
+  border-radius: 6px;
+  padding: 20px;
+  font-weight: bold;
+}
+
+.details-side-title {
+  margin: 0 12px;
+  color: #595960;
+}

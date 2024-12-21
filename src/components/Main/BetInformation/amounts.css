@@ -1,0 +1,32 @@
+.amount-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.vertical-line {
+  width: 2px;
+  background-color: #888;
+  height: 100%;
+  float: left;
+}
+
+.amount-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+}
+
+.amount-text {
+  font-size: 14px;
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  gap: 8px;
+}
