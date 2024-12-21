@@ -164,11 +164,14 @@ const Slider = ({ setOpen }: SliderProps) => {
           cursor: isDragging ? "grabbing" : "grab",
           transition: isDragging ? "none" : "left 0.3s ease",
           animation: shouldWiggle
-            ? dragDirection === "left"
-              ? "wiggleLeft 0.5s"
-              : "wiggleRight 0.5s"
-            : "none",
+            ? `${
+                dragDirection === "left"
+                  ? "wiggleLeft 0.5s"
+                  : "wiggleRight 0.5s"
+              }, glow 1s ease-in-out infinite alternate`
+            : "glow 1s ease-in-out infinite alternate",
           zIndex: 1000,
+          height: 65,
         }}
       >
         <img src={getButton(value)} height={65} />
