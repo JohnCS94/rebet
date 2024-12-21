@@ -24,6 +24,8 @@ const Slider = ({ setOpen }: SliderProps) => {
   const [value, setValue] = useState<number>(50);
   const [position, setPosition] = useState(0);
   const [isDragging, setIsDragging] = useState<boolean>(false);
+  const [dragDirection, setDragDirection] = useState("none");
+  const [shouldWiggle, setShouldWiggle] = useState(false);
 
   const positionRef = useRef<number>(150);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -39,6 +41,12 @@ const Slider = ({ setOpen }: SliderProps) => {
 
     const moveAt = (pageX: number) => {
       const newPosition = pageX - shiftX - trackRect.left;
+
+      if (event.pageX < positionRef.current) {
+        setDragDirection("left");
+      } else if (event.pageX > positionRef.current) {
+        setDragDirection("right");
+      }
 
       const clampedPosition = Math.max(
         6,
@@ -72,6 +80,9 @@ const Slider = ({ setOpen }: SliderProps) => {
         const trackWidth = trackRect.width;
         setPosition(trackWidth / 2 - 25);
         setValue(50);
+        setShouldWiggle(false);
+        setTimeout(() => setShouldWiggle(true), 0);
+        setDragDirection("none");
       },
       { once: true }
     );
@@ -111,7 +122,7 @@ const Slider = ({ setOpen }: SliderProps) => {
       <div
         style={{
           opacity: value === 50 ? 1 : 0,
-          transition: "opacity 0.5s ease",
+          transition: "opacity 0.2s ease",
           pointerEvents: "none",
         }}
       >
@@ -151,7 +162,12 @@ const Slider = ({ setOpen }: SliderProps) => {
           left: `${position + 15}px`,
           top: 25,
           cursor: isDragging ? "grabbing" : "grab",
-          transition: isDragging ? "none" : "left 0.5s ease",
+          transition: isDragging ? "none" : "left 0.3s ease",
+          animation: shouldWiggle
+            ? dragDirection === "left"
+              ? "wiggleLeft 0.5s"
+              : "wiggleRight 0.5s"
+            : "none",
           zIndex: 1000,
         }}
       >

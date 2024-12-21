@@ -25,4 +25,3 @@ Welcome to the project! Follow the steps below to get started:
 ## Notes
 
 - Ensure you have Node.js and npm installed on your system.
-- For any issues or questions, check the documentation or contact the project maintainer.

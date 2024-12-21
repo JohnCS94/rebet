@@ -159,11 +159,47 @@
 
 @-webkit-keyframes glow {
   from {
-    box-shadow: 0 0 2px #ffa500, 0 0 4px #ffa500, 0 0 6px #ffa500,
-      0 0 8px #ff8c00;
+    box-shadow: 0 0 4px #ffa500, 0 0 8px #ffa500, 0 0 12px #ffa500,
+      0 0 16px #ff8c00;
   }
   to {
-    box-shadow: 0 0 4px #ff4500, 0 0 8px #ff4500, 0 0 12px #ff6347,
-      0 0 16px #ff6347;
+    box-shadow: 0 0 6px #ff4500, 0 0 12px #ff4500, 0 0 18px #ff6347,
+      0 0 24px #ff6347;
+  }
+}
+
+@keyframes wiggleLeft {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes wiggleRight {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
