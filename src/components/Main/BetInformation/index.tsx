@@ -8,6 +8,8 @@ import Amounts from "./Amounts";
 
 import { Team } from "../../../types";
 
+import football from "../../../assets/football.png";
+
 import "./index.css";
 
 interface BetInformationProps {
@@ -30,10 +32,15 @@ const BetInformation = ({
   const formattedDate = format(date, "dd MMM").toUpperCase();
   const formattedTime = format(date, "hh:mm a");
 
+  const FOOTBALL_ICON_SIZE = 12;
+
   return (
     <div>
       <div className="bet-header">
-        <div>NFL</div>
+        <div>
+          <img src={football} height={FOOTBALL_ICON_SIZE} />
+          <span style={{ paddingLeft: 8 }}>NFL</span>
+        </div>
         <div>{pending && <Pending />}</div>
       </div>
       <div className="main-content">
@@ -49,7 +56,9 @@ const BetInformation = ({
           <div className="odd" style={{ fontSize: 13 }}>
             ODDS
           </div>
-          <div className="odds-bubble">1:1</div>
+          <div className="odds-bubble-container">
+            <div className="odds-bubble">1:1</div>
+          </div>
         </div>
         <div>
           <TeamInformation avatar={team2.avatar} name={team2.name} />
