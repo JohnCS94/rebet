@@ -32,7 +32,7 @@ const Slider = ({ setOpen }: SliderProps) => {
 
   const handleMouseDown = (event: React.MouseEvent) => {
     if (!trackRef.current) return;
-
+    positionRef.current = 184;
     const trackRect = trackRef.current.getBoundingClientRect();
     const shiftX =
       event.clientX - event.currentTarget.getBoundingClientRect().left;
